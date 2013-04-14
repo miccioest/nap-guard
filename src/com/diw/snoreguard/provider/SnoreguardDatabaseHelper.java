@@ -97,6 +97,11 @@ public class SnoreguardDatabaseHelper extends SQLiteOpenHelper {
 		return 1;
 	}
 	
+	public int updateAlarmActive(int id, boolean active) {
+		// TODO update row
+		return 1;
+	}
+	
 	public int deleteAlarm(int id) {
 		// TODO delete row
 		return 1;

@@ -1,6 +1,8 @@
 package com.diw.snoreguard.ui;
 
 import com.diw.snoreguard.R;
+import com.diw.snoreguard.provider.AlarmDTO;
+import com.diw.snoreguard.provider.SnoreguardDatabaseHelper;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -56,6 +58,11 @@ public class ConfigActivity extends Activity {
 			case 0:
 				//Save Alarm
 				Toast.makeText(this, "You pressed the Item 1 of ActionBar", Toast.LENGTH_SHORT).show();
+				
+				AlarmDTO alarm = new AlarmDTO(0, true, "ringtone1", 10, 15, "10:25", true);
+				SnoreguardDatabaseHelper db = SnoreguardDatabaseHelper.getInstance(ConfigActivity.this);
+				db.addAlarm(alarm);
+				
 				return true;
 			
 			case 1:

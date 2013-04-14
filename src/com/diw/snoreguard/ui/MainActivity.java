@@ -1,6 +1,8 @@
 package com.diw.snoreguard.ui;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
 import com.diw.snoreguard.R;
 import com.diw.snoreguard.provider.AlarmDTO;
 import com.diw.snoreguard.provider.SnoreguardDatabaseHelper;
@@ -8,6 +10,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View; 
 import android.widget.TableRow;
@@ -15,6 +18,7 @@ import android.widget.TableRow;
 
 public class MainActivity extends Activity {
 
+	private static final String TAG = "MainActivity";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,15 @@ public class MainActivity extends Activity {
 				// Traer la lista de alarmas y 
 				SnoreguardDatabaseHelper db = SnoreguardDatabaseHelper.getInstance(MainActivity.this);
 				ArrayList<AlarmDTO> alarms = db.getAlarms();
+				
+				Iterator<AlarmDTO> it = alarms.iterator();
+				Log.v(TAG, "Recorriendo el array de Alarmas");
+				while (it.hasNext()) {
+					AlarmDTO alarm = it.next();
+					Log.v(TAG,"id = "+alarm.GetId());
+					
+				}
+					
 				
 		        //Obtenemos una referencia al Add Alarm y controlamos si se presiona. 
 
