@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/main_background"
+    tools:context=".MainActivity" >
+ 
+        <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:stretchColumns="2" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ToggleButton
+                android:id="@+id/toggleButton_onOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="40dip"
+                android:text="@string/button_onOff"
+                android:textOff="@string/textOff"
+                android:textOn="@string/textOn" />
+
+            <TextView
+                android:id="@+id/textView_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="@string/button_alarm"
+                android:textSize="25sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+             <FrameLayout
+                 android:id="@+id/head_line"
+                 android:layout_width="fill_parent"
+                 android:layout_height="2dp"
+                 android:layout_span="6"
+                 android:background="#0000CC" >
+
+			  </FrameLayout>
+        
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tableLayout1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/tableLayout1"
+        android:stretchColumns="*" >
+    </TableLayout>
+
+</RelativeLayout>

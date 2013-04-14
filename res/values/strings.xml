@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SnoreGuard</string>
+    <string name="ConfigActivity">Alarm Configuration</string>
+    <string name="action_settings"> action settings</string>
+    <string name="button_onOff">ON/OFF</string>
+	<string name="button_alarm">+ Add Alarm</string>
+	<string name="textOff">OFF</string>
+	<string name="textOn">ON</string>
+	
+</resources>
