@@ -90,7 +90,7 @@ public class ConfigActivity extends Activity {
 			
 			MenuItem item2 = menu.add(0, 1, 1, "Item 2");
 			{
-				item2.setIcon(R.drawable.content_remove);
+				item2.setIcon(R.drawable.content_discard);
 				item2.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 			}
 			
