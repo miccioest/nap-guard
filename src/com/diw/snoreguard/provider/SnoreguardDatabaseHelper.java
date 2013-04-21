@@ -92,19 +92,24 @@ public class SnoreguardDatabaseHelper extends SQLiteOpenHelper {
 		return db.insert(Tables.ALARMS, null, values);
 	}
 	
-	public int updateAlarm(AlarmDTO alarm) {
-		// TODO update row
-		return 1;
+	public long updateAlarm(AlarmDTO alarm) {
+		ContentValues values = getContentValuesFromAlarmDTO(alarm);
+		
+		SQLiteDatabase db = mInstance.getWritableDatabase();
+		return db.update(Tables.ALARMS, values, "id = ?", new String[]{Integer.toString(alarm.GetId())});
 	}
 	
 	public int updateAlarmActive(int id, boolean active) {
-		// TODO update row
-		return 1;
+		ContentValues values = new ContentValues();
+		values.put(AlarmsColumns.ALARM_ACTIVE, (active == true) ? 1 : 0);
+		
+		SQLiteDatabase db = mInstance.getWritableDatabase();
+		return db.update(Tables.ALARMS, values, "id = ?", new String[]{Integer.toString(id)});
 	}
 	
 	public int deleteAlarm(int id) {
-		// TODO delete row
-		return 1;
+		SQLiteDatabase db = mInstance.getWritableDatabase();
+		return db.delete(Tables.ALARMS, "id = ?", new String[]{Integer.toString(id)});
 	}
 	
 	private SnoreguardDatabaseHelper(Context context) {
