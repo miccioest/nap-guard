@@ -7,5 +7,6 @@
 	<string name="button_alarm">+ Add Alarm</string>
 	<string name="textOff">OFF</string>
 	<string name="textOn">ON</string>
+	<string name="title">Alarms List</string>
 	
 </resources>

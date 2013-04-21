@@ -8,13 +8,14 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
-    <application
+    <application       
         android:allowBackup="true"
         android:icon="@drawable/zzz_sleep"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.diw.snoreguard.ui.MainActivity"
+            android:configChanges="orientation|screenSize"
             android:launchMode="singleTask"
             android:label="@string/app_name" >
             <intent-filter>
