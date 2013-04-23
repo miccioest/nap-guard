@@ -54,7 +54,8 @@ public class MainActivity extends Activity {
 		
                 //Hacemos una referencia a la tabla
 				final TableLayout tl = (TableLayout)findViewById(R.id.tableLayoutAlarms);
-				//tl.removeAllViews();
+				// Vaciamos la tabla al inicio
+				tl.removeAllViewsInLayout();
 				// Traer la lista de alarmas y 
 				SnoreguardDatabaseHelper db = SnoreguardDatabaseHelper.getInstance(MainActivity.this);
 				ArrayList<AlarmDTO> alarms = db.getAlarms();
@@ -72,6 +73,11 @@ public class MainActivity extends Activity {
 			        
 					//Creamos el Toogle Button correspondiente a la nueva fila
 					ToggleButton tb = new ToggleButton(this);
+                    
+					//Inicializo
+					tb.setText("OFF");
+                    tb.setTextOff("OFF");
+                    tb.setTextOn("ON");
 			        tb.setId(idAlarm);
 			        
 					//Colocamos el nombre de la nueva fila
